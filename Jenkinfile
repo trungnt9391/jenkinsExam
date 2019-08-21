@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clone form git') {
+            steps {
+               sh "rm -rf axamtrungnt69"
+               sh "mkdir axamtrungnt69"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mkdir upup'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
