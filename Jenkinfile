@@ -1,21 +1,19 @@
 pipeline {
     agent any
-
     stages {
-        stage('clone form git') {
+        stage('---clean---') {
             steps {
-               sh "rm -rf axamtrungnt69"
-               sh "mkdir axamtrungnt69"
+                sh "mvn clean"
             }
         }
-        stage('Test') {
+        stage('--test--') {
             steps {
-                sh 'mkdir upup'
+                sh "mvn test"
             }
         }
-        stage('Deploy') {
+        stage('--package--') {
             steps {
-                echo 'Deploying....'
+                sh "mvn package"
             }
         }
     }
